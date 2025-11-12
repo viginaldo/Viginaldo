@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark" id="lang-pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-key="title">Viginaldo Jaquim - Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <script src="https://unpkg.com/resend@3.5.0/dist/resend.umd.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body style="overflow: hidden;">
+
+    <!-- SCROLL PROGRESS -->
+    <div id="progress-bar"></div>
+
+    <!-- MENU -->
+    <nav id="navbar">
+        <div class="logo">VJ</div>
+        <div class="links" id="nav-links">
+            <a href="#hero" data-key="home">Início</a>
+            <a href="#sobre" data-key="about">Sobre</a>
+            <a href="#experiencia" data-key="experience">Experiência</a>
+            <a href="#habilidades" data-key="skills">Habilidades</a>
+            <a href="#projetos" data-key="projects">Projetos</a>
+            <a href="#depoimentos" data-key="testimonials">Depoimentos</a>
+            <a href="#contato" data-key="contact">Contato</a>
+        </div>
+        <div class="right-controls">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="lang-menu">
+                <button class="lang-toggle" aria-label="Change language"><i class="fas fa-globe"></i></button>
+                <div class="lang-options">
+                    <button data-lang="pt"><span class="flag">PT</span> <span
+                            data-key="lang_pt">Português</span></button>
+                    <button data-lang="en"><span class="flag">EN</span> <span data-key="lang_en">English</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- LOADING -->
+    <div id="loader">
+        <h2 data-key="loading">VIGINALDO JAQUIM</h2>
+        <div class="rain-container"></div>
+        <div class="spinner"></div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="container" id="main">
+        <header id="hero">
+            <div class="parallax-bg"></div>
+
+            <!-- Foto com efeito neon -->
+            <div class="photo-container">
+                <div class="photo-placeholder">VJ</div>
+            </div>
+
+            <!-- Nome com efeito neon -->
+            <h1>Viginaldo Jaquim</h1>
+
+            <!-- Typing: muda conforme idioma -->
+            <p class="typing" id="typing"></p>
+
+            <!-- Subtítulo com stack completa -->
+            <p class="subtitle" data-key="location">
+                Desenvolvedor Web & UI/UX Designer
+            </p>
+
+            <!-- Botões de ação -->
+            <div class="btn-group">
+                <a href="#projetos" class="btn" data-key="projects_btn">Ver Projetos</a>
+                <a href="#contato" class="btn btn-outline" data-key="contact_btn">Contato</a>
+                <a href="assets/cv-viginaldo.pdf" download class="btn" data-key="cv_btn">Download CV</a>
+            </div>
+        </header>
+
+        <section id="sobre">
+            <h2 data-key="about">Sobre Mim</h2>
+
+            <div class="about-grid">
+
+                <!-- LADO ESQUERDO: CARROSSEL DE IMAGENS -->
+                <div class="about-images">
+                    <div class="image-slider">
+                        <img src="assets/about/1.png" alt="Viginaldo codificando" class="slide active" />
+                        <img src="assets/about/dep.png" alt="Viginaldo no Figma" class="slide" />
+                        <img src="assets/about/2.png" alt="Viginaldo deployando" class="slide" />
+                        <img src="assets/about/me.png" alt="Viginaldo em Moçambique" class="slide" />
+                        <img src="assets/about/Developer.png" alt="Viginaldo em Moçambique" class="slide" />
+                    </div>
+                </div>
+
+                <!-- LADO DIREITO: TEXTO MAIOR E PROFISSIONAL -->
+                <div class="about-text">
+                    <p data-key="about_text"></p>
+                    <p data-key="about_text2"></p>
+                    <p data-key="about_text3"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2 data-key="experience">Experiência</h2>
+            <div class="experience">
+                <div class="exp-item">
+                    <h3 data-key="freelancer">Concurso - Destiny</h3>
+                    <p class="exp-date">2025</p>
+                    <p data-key="freelancer_desc">Premio do 1º lugar no desenvolvimento de um sistema de gestão de
+                        Hoteis/Restaurantes</p>
+                </div>
+                <div class="exp-item">
+                    <h3 data-key="freelancer_2">Website - Destiny</h3>
+                    <p class="exp-date">2025</p>
+                    <p data-key="freelancer_desc_2">Desenvolvimento de um website</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2 data-key="skills">Habilidades</h2>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- REPETE 2x para loop infinito -->
+                    <!-- PRIMEIRA RODADA -->
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                            alt="HTML5" />
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                            alt="CSS3" />
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" />
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                            alt="React" />
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                            alt="Java" />
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
+                            alt="Firebase" />
+                        <span>Firebase</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+                            alt="Supabase" />
+                        <span>Supabase</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                            alt="Figma" />
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/railway/railway-original.svg"
+                            alt="Railway" />
+                        <span>Railway</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt="MySQL" />
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+                            alt="Flutter" />
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg"
+                            alt="SQL" />
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                            alt="PHP" />
+                        <span>PHP</span>
+                    </div>
+                    <!-- SEGUNDA RODADA (LOOP INFINITO) -->
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                            alt="HTML5" />
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                            alt="CSS3" />
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" />
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                            alt="React" />
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                            alt="Java" />
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
+                            alt="Firebase" />
+                        <span>Firebase</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+                            alt="Supabase" />
+                        <span>Supabase</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                            alt="Figma" />
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/railway/railway-original.svg"
+                            alt="Railway" />
+                        <span>Railway</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt="MySQL" />
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+                            alt="Flutter" />
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg"
+                            alt="SQL" />
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                            alt="PHP" />
+                        <span>PHP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2 data-key="projects">Projetos</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img src="assets/projects/Book-Preview.png" alt="BookZone">
+                    <div class="project-info">
+                        <h3 data-key="title_Book">BookZone</h3>
+                        <p data-key="title_Book_desc">A sua loja de livros digital</p>
+                        <div class="project-links">
+                            <a href="https://bookzone-seven.vercel.app/" target="_blank" rel="noopener" class="live"
+                                data-key="live">Live</a>
+                            <a href="https://github.com/viginaldo/Bookzone" target="_blank" rel="noopener"
+                                class="github" data-key="github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/projects/Destiny-Web.png" alt="E-commerce 3D">
+                    <div class="project-info">
+                        <h3 data-key="title_Dest">Destiny - Website</h3>
+                        <p data-key="title_Dest_desc">Web Com as maiores marcas de Destiny</p>
+                        <div class="project-links">
+                            <a href="https://destiny24.42web.io/" target="_blank" rel="noopener" class="live"
+                                data-key="live">Live</a>
+                            <a href="https://github.com/viginaldo/Destiney" target="_blank" rel="noopener"
+                                class="github" data-key="github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="assets/projects/Its.png" alt="Projeto escolar">
+                    <div class="project-info">
+                        <h3 data-key="title_its">ISCTEM</h3>
+                        <p data-key="title_its_desc">Projeto escolar</p>
+                        <div class="project-links">
+                            <a href="https://itsshop-sd-production.up.railway.app/" target="_blank" rel="noopener"
+                                class="live" data-key="live">Live</a>
+                            <a href="https://github.com/viginaldo/ITS_Shop-SD" target="_blank" rel="noopener"
+                                class="github" data-key="github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="assets/projects/Rank.png" alt="Projeto escolar">
+                    <div class="project-info">
+                        <h3 data-key="title_rank">Rank</h3>
+                        <p data-key="title_rank_desc">Ranking de projecto</p>
+                        <div class="project-links">
+                            <a href="https://magassin-aline-lobo.vercel.app/" target="_blank" rel="noopener"
+                                class="live" data-key="live">Live</a>
+                            <a href="https://github.com/viginaldo/Magasin_Aline_Lobo/" target="_blank" rel="noopener"
+                                class="github" data-key="github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="assets/projects/Pharm.png" alt="Projeto escolar">
+                    <div class="project-info">
+                        <h3 data-key="title_pharm">PharmaFind</h3>
+                        <p data-key="title_pharm_desc">A sua loja de medicamentos</p>
+                        <div class="project-links">
+                            <a href="#" rel="noopener" class="live" data-key="live">Live Indisponivel</a>
+                            <a href="https://github.com/viginaldo/PHP-pratica" target="_blank" rel="noopener"
+                                class="github" data-key="github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <h2 data-key="testimonials">Depoimentos</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p data-key="testimonial_2">"Recomendo 100%. Transformo vossas ideias em realidade."</p>
+                    <p class="author">— Viginaldo Joaquim, Dev Jr</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+        <h2 data-key="contact">Contato</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Seu Nome" data-key="name_placeholder" required />
+            <input type="email" name="email" placeholder="Seu Email" data-key="email_placeholder" required />
+            <textarea name="message" rows="5" placeholder="Sua Mensagem" data-key="message_placeholder" required></textarea>
+            <button type="submit" class="btn" data-key="send">Enviar</button>
+        </form>
+        </section>
+
+        <footer>
+            <p>© 2025 Viginaldo Jaquim. <span data-key="made_with">Feito com</span> <span class="neon">neon</span> <span
+                    data-key="in_moz">Todos os direitos reservados</span>.</p>
+            <div class="social-links">
+                <a href="https://github.com/viginaldo/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/viginaldo-zainuro-mussa-295686297" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/viginaldo_zainuro_mussa/" target="_blank" rel="noopener"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <a href="https://wa.me/+258864037667" target="_blank" rel="noopener" id="whatsapp-btn" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    
+</body>
+
+</html>
