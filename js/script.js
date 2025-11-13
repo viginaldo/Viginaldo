@@ -304,9 +304,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // === FORMULÁRIO ===
 document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  if (!resend) return alert('Email não carregou. Recarrega.');
 
-  const data = {
+  const button = e.target.querySelector('button');
+  button.disabled = true;
+  button.textContent = 'Enviando...';
+
+  if (!resend) {
+    alert('Serviço de email não carregou. Tenta recarregar a página.');
+    button.disabled = false;
+    button.textContent = translations[document.documentElement.lang].send;
+    return;
+  }
+
+  const formData = {
     name: e.target.name.value,
     email: e.target.email.value,
     message: e.target.message.value,
@@ -317,21 +327,50 @@ document.getElementById('contact-form')?.addEventListener('submit', async (e) =>
     const { error } = await resend.emails.send({
       from: 'Viginaldo <viginaldozainurimussa@gmail.com>',
       to: ['viginaldozainurimussa@gmail.com'],
-      subject: `Nova mensagem: ${data.name}`,
-      html: `<div style="font-family:Inter;background:#0a0a0a;color:#e0e0e0;padding:2rem;border-radius:16px;max-width:600px;margin:auto">
-        <h1 style="color:#00ff88;text-shadow:0 0 10px #00ff88">Nova Mensagem</h1>
-        <p><strong>Nome:</strong> ${data.name}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <div style="background:#1a1a1a;padding:1rem;border-left:3px solid #00ff88;border-radius:8px;margin:1rem 0">${data.message}</div>
-        <p style="color:#00ff88;text-align:right">Enviado: ${data.date}</p>
-      </div>`
+      subject: `Nova mensagem: ${formData.name}`,
+      html: `
+        <div style="font-family:Inter;background:#0a0a0a;color:#e0e0e0;padding:2rem;border-radius:16px;max-width:600px;margin:auto">
+          <h1 style="color:#00ff88;text-shadow:0 0 10px #00ff88">Nova Mensagem</h1>
+          <p><strong>Nome:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <div style="background:#1a1a1a;padding:1rem;border-left:3px solid #00ff88;border-radius:8px;margin:1rem 0">${formData.message}</div>
+          <p style="color:#00ff88;text-align:right">Enviado: ${formData.date}</p>
+        </div>
+      `
     });
 
     if (error) throw error;
-    alert('Enviado com sucesso!');
+
+    alert('Mensagem enviada com sucesso!');
     e.target.reset();
   } catch (err) {
-    console.error(err);
-    alert('Erro ao enviar.');
+    console.error('Erro Resend:', err);
+    alert('Erro ao enviar. Tenta novamente.');
+  } finally {
+    button.disabled = false;
+    button.textContent = translations[document.documentElement.lang].send;
   }
+});
+
+// === MENU MOBILE (HAMBURGER) ===
+function toggleMenu() {
+  const navLinks = document.getElementById('nav-links');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  if (!navLinks || !mobileMenu) return;
+
+  navLinks.classList.toggle('show');
+  mobileMenu.classList.toggle('active');
+}
+
+// Fecha ao clicar em link (mobile)
+document.querySelectorAll('.links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.getElementById('nav-links');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (navLinks && mobileMenu) {
+      navLinks.classList.remove('show');
+      mobileMenu.classList.remove('active');
+    }
+  });
 });
